@@ -1,0 +1,28 @@
+{% extends 'base_template.html' %}
+
+{% block title%}NEWS{%endblock%}
+
+{%block special_style%}
+
+img{
+  display: block;
+  max-width: 900px;
+  max-height: 300px;
+  object-fit:cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+{%endblock%}
+
+{% block content%}
+<div class="w3-row navbarpos" style="font-family:georgia">
+  <div class="w3-col l2" style="color:white">Capuchin</div>
+  <div class="w3-col l8 w3-padding">
+    <h2 class = "w3-center" style="font-family:georgia">{{ news_details.title}}</h2>
+    <p>{{ news_details.body|safe}}</p>
+    <p>{{ news_details.date}}</p>
+  </div>
+  <div class="w3-col l2" style="color:white;">Capuchin</div>
+</div>
+{%endblock%}

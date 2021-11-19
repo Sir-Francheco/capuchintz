@@ -1,0 +1,21 @@
+{% extends 'base_template.html' %}
+
+{%block title%}ARTICLES{%endblock%}
+
+{%block content%}
+<div class="w3-row w3-padding w3-container navbarpos">
+    <div class="w3-col l2" style="color:white;">Capuchin</div>
+    <div class="w3-col l7" style="font-family:georgia;">
+    <h1 style = "font-family:Georgia" class="w3-center">Articles</h1>
+    {% for article in article_list %}
+        <div class="news">
+            <h2 style="font-family:georgia;"><a href="{% url 'details' slug=article.slug %}">{{ article.title }}</a></h2>
+            <p>{{ article.snippest|safe}}</p>
+            <p style="font-family:georgia;">{{article.date}}</p>
+        </div>
+        <hr style="height:1px; border-width:0; color:grey; background-color:grey;">
+    {% endfor %}
+     </div>
+    <div class="w3-col l2" style="color:white;">Capuchin</div>
+</div>
+{%endblock%}
